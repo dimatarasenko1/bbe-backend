@@ -2,7 +2,7 @@ from openai import OpenAI
 import json
 import tiktoken as tiktoken
 import logging
-from ..config import settings
+from config import settings
 from typing import List
 
 

@@ -1,8 +1,8 @@
 import firebase_admin
 from firebase_admin import auth
 from fastapi import HTTPException
-from ..config import db
-from ..models.quiz import QuizDetails
+from config import db
+from models.quiz import QuizDetails
 
 
 def validate_user_login(token: str) -> dict:

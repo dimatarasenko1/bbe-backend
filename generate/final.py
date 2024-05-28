@@ -1,5 +1,5 @@
-from ..models.quiz import DraftOption, QuizDetails, Question
-from ..utils import gpt_interactor
+from models.quiz import DraftOption, QuizDetails, Question
+from utils import gpt_interactor
 
 
 def system_message():

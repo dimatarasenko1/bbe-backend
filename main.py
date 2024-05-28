@@ -1,11 +1,11 @@
-from . import config
+import config
 from fastapi import FastAPI, status, Response, Header, HTTPException
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
-from .utils.firebase_interactor import validate_user_login, validate_can_generate
-from .models.quiz import DraftInput, DraftResponse, DraftOption, QuizDetails
-from .utils import gpt_interactor, firebase_interactor
-from . import generate
+from utils.firebase_interactor import validate_user_login, validate_can_generate
+from models.quiz import DraftInput, DraftResponse, DraftOption, QuizDetails
+from utils import gpt_interactor, firebase_interactor
+import generate
 
 app = FastAPI()
 
