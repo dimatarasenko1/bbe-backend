@@ -1,0 +1,26 @@
+# flyctl launch added from .gitignore
+# Byte-compiled / optimized / DLL files
+**/__pycache__
+
+# Virtual environment
+**/venv
+**/.venv
+**/.vscode
+**/.env
+
+# Pytest
+**/.cache
+**/.pytest_cache
+
+# Databases
+**/*.db
+**/*.sql
+
+# Logs
+**/*.log
+
+# Local .env files
+**/.env.local
+
+**/googleServiceAccount.json
+fly.toml
