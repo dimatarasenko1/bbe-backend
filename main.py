@@ -1,19 +1,30 @@
 import config
-from fastapi import FastAPI, status, Response, Header, HTTPException
+from fastapi import (
+    FastAPI,
+    WebSocket,
+    WebSocketDisconnect,
+    status,
+    Response,
+    Header,
+    HTTPException,
+)
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
 from utils.firebase_interactor import validate_user_login, validate_can_generate
 from models.quiz import DraftInput, DraftResponse, DraftOption, QuizDetails
 from utils import gpt_interactor, firebase_interactor
 import generate
+from typing import Dict, List
 
 app = FastAPI()
+connected_pairs: Dict[str, List[WebSocket]] = {}
 
 origins = [
     "http://localhost",
     "http://localhost:3000",
     "https://bbe-web.netlify.app",
     "https://play.bbenergy.app",
+    "self",
 ]
 
 app.add_middleware(
@@ -83,6 +94,32 @@ async def change_username(
     # change username ref in all game docs
 
     return {"todo": "world"}
+
+
+@app.websocket("/ws/{game_id}/{user_id}")
+async def websocket_endpoint(game_id: str, user_id: str, websocket: WebSocket):
+    await websocket.accept()
+
+    # Initialize the pair if not present
+    if game_id not in connected_pairs:
+        connected_pairs[game_id] = []
+
+    # Add the WebSocket connection to the pair
+    connected_pairs[game_id].append(websocket)
+
+    try:
+        while True:
+            data = await websocket.receive_text()
+            # Send the received data to the other user in the same pair
+            for ws in connected_pairs[game_id]:
+                if ws != websocket:
+                    await ws.send_text(data)
+    except WebSocketDisconnect:
+        # If a user disconnects, remove them from the pair
+        connected_pairs[game_id].remove(websocket)
+        if not connected_pairs[game_id]:
+            del connected_pairs[game_id]
+        await websocket.close()
 
 
 @app.get("/health", status_code=status.HTTP_200_OK)
