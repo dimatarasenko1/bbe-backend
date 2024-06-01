@@ -20,7 +20,7 @@ class QuizDetails(CamelCaseModel):
     username: Optional[str] = None
     play_count: int = 1
     questions: List[Question]
-    category: str
+    category: Optional[str] = "other"
     emoji: Optional[str] = None
 
 
