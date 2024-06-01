@@ -23,7 +23,6 @@ class DraftInput(CamelCaseModel):
 
 class DraftOption(CamelCaseModel):
     title: str
-    intro: str
     example_question: str
 
 

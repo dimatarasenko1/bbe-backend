@@ -16,7 +16,6 @@ def two_shot_final_prompt(draft: DraftOption) -> str:
     The user has chosen a quiz idea that we now need to fill out with questions and answers. 
     Here is the user's chosen quiz idea:
     Title: {draft.title}
-    Intro: {draft.intro}
     Example Question: {draft.example_question}
 
     --- Instructions ---
@@ -136,7 +135,7 @@ def generate_final(draft: DraftOption) -> QuizDetails:
 
     quiz = QuizDetails(
         title=draft.title,
-        intro=draft.intro,
+        intro=draft.example_question,
         questions=selected_questions[:10],
     )
     return quiz
