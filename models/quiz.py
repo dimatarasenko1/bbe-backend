@@ -8,6 +8,11 @@ class Question(CamelCaseModel):
     correctIndex: int
 
 
+class Category(CamelCaseModel):
+    slug: str
+    emojiUnicode: Optional[str] = None
+
+
 class QuizDetails(CamelCaseModel):
     id: Optional[str] = None
     title: str
@@ -15,6 +20,7 @@ class QuizDetails(CamelCaseModel):
     username: Optional[str] = None
     play_count: int = 1
     questions: List[Question]
+    category: Optional[Category] = None
 
 
 class DraftInput(CamelCaseModel):

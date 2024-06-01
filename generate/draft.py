@@ -3,7 +3,7 @@ from models.quiz import DraftOption
 
 
 def system_message():
-    m = """You are a smart and witty quizz gamemaster. 
+    m = """You are a smart and fun quizz gamemaster. 
     With your help I am creating personalised quiz games for users to enjoy.
     The goal is to create an engaging quizz game so people can test their knowledge, learn something new and have fun.
     The idea of our quizz is that the user can decide the topic themselves and we then create a unique quizz just for them."""
@@ -18,14 +18,13 @@ def two_shot_draft_prompt(user_input: str):
     USER ANSWER: {user_input}
 
     --- Instructions ---
-    1. Generate two unique quiz ideas based on the user's input.
+    1. Generate two unique and different quiz ideas based on the user's input.
     2. Each quiz idea should have a title and an example question.
+    3. IMPORTANT: The two ideas should be very different from each other. Take a second to be creative and make sure the two quizzes you generate are not too similar.
 
     -- Guidelines --
-    1. The ideas should be creative and very different from each other. Take inspiration from the user's input and come up with 2 different quiz themes that clearly cover different aspects of the topic.
-    2. The title needs to be short and clearly indicate the idea of the quiz. Make it catchy, but do not use clickbait titles or cliches.
+    1. The title needs to be short and clearly indicate the idea of the quiz. Make it catchy, but do not use clickbait titles or cliches.
     3. The example question should be interesting and engaging. It should be challenging enough to make the user want to play the quiz.
-
 
     --- Quiz Examples ---
     User input: "space exploration"

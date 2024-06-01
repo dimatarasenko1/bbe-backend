@@ -64,17 +64,15 @@ async def generate_final(
 ):
     user = validate_user_login(token)
     validate_can_generate(user)
-    print(user)
 
-    # get username from firebase - save quiz with it later
     username = firebase_interactor.get_username(user["uid"])
 
     quizz = generate.generate_final(payload)
     quizz.username = username
+    quizz.category = generate.assign_category(quizz.title)
     quizz_id = firebase_interactor.save_quizz(quizz)
     quizz.id = quizz_id
 
-    # generates final quiz - saves to firestore
     return quizz
 
 

@@ -3,7 +3,7 @@ from utils import gpt_interactor
 
 
 def system_message():
-    m = """You are a smart and witty trivia gamemaster. 
+    m = """You are a smart and fun quizz gamemaster. 
     With your help I am creating personalised quiz games for users to enjoy.
     The goal is to create an engaging quizz game so people can test their knowledge, learn something new and have fun.
     The idea of our quizz is that the user can decide the topic themselves and we then create a unique quizz just for them."""
@@ -22,17 +22,15 @@ def two_shot_final_prompt(draft: DraftOption) -> str:
     1. Generate 20 multiple choice questions for the quiz.
     2. Each question should have 4 answer choices with one correct answer.
     3. The questions should only relate to the topic of the quiz.
-    4. The example question should not be included in the final quiz.
+    4. The example question should not be included.
+    5. The questions should get harder as the quiz progresses. Only a real expert should be able to answer the last question.
 
     -- Guidelines --
-    1. The tone of voice for each question should be casual, fun and engaging. 
-    2. Each question needs to be phrased so it can be answered in a multiple choice format.
+    1. IMPORTANT: Do not cover questions where you are not certain about the answer.
     2. The correct answer should be clear and not misleading.
-    4. Do not cover questions where you are not certain about the answer.
-    3. The questions should get harder as the quiz progresses.
-    4. No question should be too easy or impossible.
-    7. Be creative with the questions, don't just use the same structure for each question and covert various aspects of the quiz topic.
-    7. It is all about creating a fun and engaging quiz that the user will enjoy playing.
+    3. The tone of voice for each question should be casual, fun and engaging. 
+    4. Be creative with the questions, don't just use the same structure for each question and cover various aspects of the quiz topic.
+    5. It is all about creating a fun and engaging quiz that the user will enjoy playing.
 
     --- Quiz Example ---
     Title: "Space Exploration: The Final Frontier"
@@ -117,25 +115,15 @@ def generate_final(draft: DraftOption) -> QuizDetails:
         for q in qs
     ]
 
-    # cut list down to 10
-    # Initial selection: take one, ignore one
+    # play around with the order a bit
     questions = questions[:20]
-    selected_questions = questions[::2]
-    ignored_questions = questions[1::2]
-
-    # Ensure we have exactly 10 questions
-    while len(selected_questions) != 10:
-        if ignored_questions:
-            selected_questions.append(ignored_questions.pop(0))
-        else:
-            break
-
-    # Sort questions back by the original order of difficulty
-    selected_questions.sort(key=lambda q: questions.index(q))
+    first_ten = questions[::2]
+    rest = questions[1::2]
+    final_questions = first_ten + rest
 
     quiz = QuizDetails(
         title=draft.title,
         intro=draft.example_question,
-        questions=selected_questions[:10],
+        questions=final_questions,
     )
     return quiz
