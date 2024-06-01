@@ -69,7 +69,9 @@ async def generate_final(
 
     quizz = generate.generate_final(payload)
     quizz.username = username
-    quizz.category = generate.assign_category(quizz.title)
+    cat = generate.assign_category(quizz.title)
+    quizz.category = cat.slug
+    quizz.emoji = cat.emojiUnicode
     quizz_id = firebase_interactor.save_quizz(quizz)
     quizz.id = quizz_id
 
