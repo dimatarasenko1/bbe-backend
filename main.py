@@ -11,7 +11,13 @@ from fastapi import (
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
 from utils.firebase_interactor import validate_user_login, validate_can_generate
-from models.quiz import DraftInput, DraftResponse, DraftOption, QuizDetails
+from models.quiz import (
+    DraftInput,
+    DraftResponse,
+    DraftOption,
+    QuizDetails,
+    MockQuizDetails,
+)
 from utils import gpt_interactor, firebase_interactor
 import generate
 from typing import Dict, List
@@ -24,7 +30,6 @@ origins = [
     "http://localhost:3000",
     "https://bbe-web.netlify.app",
     "https://play.bbenergy.app",
-    "self",
 ]
 
 app.add_middleware(
@@ -67,14 +72,20 @@ async def generate_final(
 
     username = firebase_interactor.get_username(user["uid"])
 
-    quizz = generate.generate_final(payload)
-    quizz.username = username
+    quizz = generate.generate_final(payload, username)
     cat = generate.assign_category(quizz.title)
     quizz.category = cat.slug
     quizz.emoji = cat.emojiUnicode
     quizz_id = firebase_interactor.save_quizz(quizz)
     quizz.id = quizz_id
 
+    return quizz
+
+
+@app.post("/populate-quizz", response_model=QuizDetails)
+async def populate_quizz(request: Request, payload: MockQuizDetails):
+    quizz = generate.populate_quizz(payload)
+    firebase_interactor.reassign_quizz(quizz)
     return quizz
 
 

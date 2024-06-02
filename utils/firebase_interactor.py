@@ -36,11 +36,39 @@ def get_username(uid: str) -> str:
 
 def save_quizz(quizz: QuizDetails) -> str:
     try:
-        update_time, doc_ref = db.collection("quiz_details").add(quizz.model_dump())
+        update_time, doc_ref = db.collection("quiz_details").add(
+            quizz.model_dump(by_alias=True)
+        )
         if update_time:
-            print(update_time)
             return doc_ref.id
         else:
             raise Exception("Failed to write document.")
     except Exception as e:
         raise HTTPException(status_code=500, detail="Failed to save quiz")
+
+
+def reassign_quizz(quizz: QuizDetails) -> str:
+    try:
+        doc_ref = db.collection("quiz_details").document(quizz.id)
+        doc_ref.set(quizz.model_dump(by_alias=True))
+        return doc_ref.id
+    except Exception as e:
+        print()
+        raise HTTPException(status_code=500, detail="Failed to save quiz")
+
+
+# def wipe_quizzes():
+#     mock_id = "9MQGNsBUABtDqsBaUGIs"
+
+#     try:
+#         quizzes = db.collection("quiz_details").stream()
+#         batch = db.batch()
+
+#         for quiz in quizzes:
+#             if quiz.id != mock_id:
+#                 batch.delete(db.collection("quiz_details").document(quiz.id))
+
+#         batch.commit()
+#         print("Quizzes wiped successfully, except for the mock quiz.")
+#     except Exception as e:
+#         print(f"An error occurred: {e}")

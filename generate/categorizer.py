@@ -3,7 +3,17 @@ from models.quiz import Category
 import json
 
 
-CATEGORIES = ["sports", "music", "film", "science", "history", "books", "arts", "other"]
+CATEGORIES = [
+    "sports",
+    "music",
+    "film",
+    "science",
+    "history",
+    "books",
+    "arts",
+    "games",
+    "other",
+]
 
 
 def system_message():

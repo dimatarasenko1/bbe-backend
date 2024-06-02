@@ -1,5 +1,6 @@
 from models.quiz import DraftOption, QuizDetails, Question
 from utils import gpt_interactor
+from datetime import datetime
 
 
 def system_message():
@@ -99,7 +100,7 @@ def two_shot_final_prompt(draft: DraftOption) -> str:
     return p
 
 
-def generate_final(draft: DraftOption) -> QuizDetails:
+def generate_final(draft: DraftOption, username: str) -> QuizDetails:
     prompt = (
         two_shot_final_prompt(draft).strip().replace("\n\n", "\n").replace("  ", " ")
     )
@@ -125,5 +126,7 @@ def generate_final(draft: DraftOption) -> QuizDetails:
         title=draft.title,
         intro=draft.example_question,
         questions=final_questions,
+        username=username,
+        created_at=int(datetime.now().timestamp()),
     )
     return quiz

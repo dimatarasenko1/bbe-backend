@@ -14,14 +14,29 @@ class Category(CamelCaseModel):
 
 
 class QuizDetails(CamelCaseModel):
+    created_at: int  # epoch timestamp
     id: Optional[str] = None
     title: str
     intro: str
-    username: Optional[str] = None
+    username: str
     play_count: int = 1
     questions: List[Question]
     category: Optional[str] = "other"
     emoji: Optional[str] = None
+    populated: bool = True
+    seed: bool = False
+
+
+class MockQuizDetails(CamelCaseModel):
+    created_at: int  # epoch timestamp
+    id: Optional[str] = None
+    title: str
+    username: str
+    play_count: int = 1
+    category: Optional[str] = "other"
+    emoji: Optional[str] = None
+    populated: bool = False
+    seed: bool = False
 
 
 class DraftInput(CamelCaseModel):
