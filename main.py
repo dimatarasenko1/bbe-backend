@@ -131,6 +131,12 @@ async def websocket_endpoint(game_id: str, user_id: str, websocket: WebSocket):
         if not connected_pairs[game_id]:
             del connected_pairs[game_id]
         await websocket.close()
+    except Exception as e:
+        print(f"Unexpected error: {e}")
+        await websocket.close()
+        connected_pairs[game_id].remove(websocket)
+        if not connected_pairs[game_id]:
+            del connected_pairs[game_id]
 
 
 @app.get("/health", status_code=status.HTTP_200_OK)
