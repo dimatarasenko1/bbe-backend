@@ -2,7 +2,12 @@ import json
 from utils import gpt_interactor
 import random
 import re
-from .categorizer import is_valid_emoji
+
+try:
+    from .categorizer import is_valid_emoji
+except:
+    from categorizer import is_valid_emoji
+
 from datetime import datetime
 from models.quiz import MockQuizDetails, Question, QuizDetails
 from utils import firebase_interactor
@@ -202,8 +207,8 @@ from utils import firebase_interactor
 
 ## END QUIZZ TITLES AND EMOJIS ##
 
-## SAVE MOCK QUIZZES TO FIRESTORE ##
-# wipe_quizzes()
+# SAVE MOCK QUIZZES TO FIRESTORE ##
+# firebase_interactor.wipe_quizzes()
 # usernames = []
 # with open("data/usernames.json", "r") as f:
 #     usernames = json.load(f)
@@ -214,7 +219,15 @@ from utils import firebase_interactor
 
 # for key in quizzes.keys():
 #     for quiz in quizzes[key]:
-#         if quiz.get("saved"):
+#         quiz["saved"] = False
+
+# with open(f"data/mock_quizzes.json", "w") as f:
+#     json.dump(quizzes, f, indent=4)
+
+
+# for key in quizzes.keys():
+#     for quiz in quizzes[key]:
+#         if quiz["saved"]:
 #             continue
 #         mock_quiz = MockQuizDetails(
 #             title=quiz["title"],
@@ -248,65 +261,35 @@ def one_shot_populate_prompt(mock_quizz: MockQuizDetails) -> str:
     p = f"""
     The user has chosen a quiz idea that we now need to fill out with questions and answers. 
     Here is the user's chosen quiz idea:
-    Title: {mock_quizz.title}
+    Quiz Title: {mock_quizz.title}
 
     --- Instructions ---
     1. Generate 20 multiple choice questions for the quiz.
     2. Each question should have 4 answer choices with one correct answer.
     3. The questions should only relate to the topic of the quiz.
-    5. The questions should get harder as the quiz progresses. Only a real expert should be able to answer the last question.
+    4. The quizz is for expert-level players, so the questions should be very challenging.
+    5. The questions should get harder as the quiz progresses. Only a real know-it-all on the topic should be able to answer all the questions.
+
 
     -- Guidelines --
     1. IMPORTANT: Do not cover questions where you are not certain about the answer.
     2. The correct answer should be clear and not misleading.
-    3. The tone of voice for each question should be casual, fun and engaging. 
-    4. Be creative with the questions, don't just use the same structure for each question and cover various aspects of the quiz topic.
-    5. It is all about creating a fun and engaging quiz that the user will enjoy playing.
+    3. Be creative with the questions, don't just use the same structure for each question and cover various aspects of the quiz topic.
+    4. The tone of voice for each question should be casual, fun and engaging. 
+    5. Do NOT use position identifiers in answer options texts - e.g. 1) or A) etc. Each answer option should just be standalone text.
+    6. It is all about creating a fun and engaging quiz that the user will enjoy playing.
 
-    --- Quiz Example ---
-    Title: "Space Exploration: The Final Frontier"
-    Intro: "Embark on a journey through the cosmos and discover the wonders of space exploration."
-    Example Question: "Which spacecraft was the first to land on Mars?"
+    --- Question Tone of Voice And Format Examples ---
+    Quiz Title: "Space Exploration: The Final Frontier"
 
-    Question 1: "What is the name of the first artificial satellite launched into space?"
-    Answer Choices: A) Luna 1, B) Sputnik 1, C) Explorer 1, D) Vanguard 1
-    Correct Answer: B
-
-    Question 2: "Who was the first human to travel into space?"
+    Question: "Who was the first human to travel into space?"
     Answer Choices: A) Yuri Gagarin, B) Alan Shepard, C) John Glenn, D) Neil Armstrong
-    Correct Answer: A
 
-    Question 3: "Which year did the first dog orbit the Earth?"
+    Question: "Which year did the first dog orbit the Earth?"
     Answer Choices: A) 1957, B) 1959, C) 1961, D) 1963
-    Correct Answer: A
 
-    Question 4: "Which mission was the first to successfully land humans on the Moon?"
-    Answer Choices: A) Apollo 8, B) Apollo 10, C) Apollo 11, D) Apollo 13
-    Correct Answer: C
-
-    Question 5: "Which mission resulted in a famous disaster during launch?"
-    Answer Choices: A) Challenger, B) Discovery, C) Atlantis, D) Columbia
-    Correct Answer: A
-
-    Question 6: "What is the line separating Earth's atmosphere from outer space called?"
+    Question: "What is the line separating Earth's atmosphere from outer space called?"
     Answer Choices: A) Karman Line, B) Armstrong Line, C) Exobase, D) Tropopause
-    Correct Answer: A
-
-    Question 7: "How many countries are part of the International Space Station program?"
-    Answer Choices: A) 10, B) 15, C) 20, D) 25
-    Correct Answer: C
-
-    Question 8: "What was the first spacecraft to fly by Pluto?"
-    Answer Choices: A) New Horizons, B) Voyager 1, C) Cassini, D) Galileo
-    Correct Answer: A
-
-    Question 9: "How many people have walked on the Moon?"
-    Answer Choices: A) 8, B) 10, C) 12, D) 14
-    Correct Answer: C
-    
-    Question 10: "What is the average temperature on the surface of Mars?"
-    Answer Choices: A) -60°C, B) -80°C, C) 0°C, D) -40°C
-    Correct Answer: A
     
     --- Response Format ---
     Return a JSON object of the final quizz like:
