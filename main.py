@@ -54,8 +54,9 @@ async def quizzes(
     query: Optional[str] = Query(None),
     category: Optional[str] = Query(None),
     page: Optional[int] = Query(1),
+    seen: Optional[List[str]] = Query([]),
 ):
-    return services.get_quizzes(page, query, category)
+    return services.get_quizzes(page, query, category, seen)
 
 
 @app.post("/generate-draft", response_model=DraftResponse)

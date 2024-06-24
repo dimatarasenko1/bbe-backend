@@ -15,7 +15,10 @@ def validate_quizzes(quizzes: List[Dict]) -> List[QuizDetails]:
 
 
 def get_quizzes(
-    page: int, query: Optional[str] = None, category: Optional[str] = None
+    page: int,
+    query: Optional[str] = None,
+    category: Optional[str] = None,
+    seen: Optional[List[str]] = [],
 ) -> Dict[str, QuizDetails]:
     per_page = 20
     offset = (page - 1) * per_page
@@ -28,6 +31,10 @@ def get_quizzes(
         count_query = count_query.ilike("title", f"%{query}%")
     if category:
         count_query = count_query.eq("category", category)
+    if seen:
+        seen = seen[0].split(",")
+        print(seen)
+        count_query = count_query.not_.in_("id", seen)
 
     # Execute the count query
     count_response = count_query.execute()
@@ -50,6 +57,8 @@ def get_quizzes(
         data_query = data_query.ilike("title", f"%{query}%")
     if category:
         data_query = data_query.eq("category", category)
+    if len(seen) > 0:
+        data_query = data_query.not_.in_("id", seen)
 
     # Execute the data query
     data_response = data_query.execute()
