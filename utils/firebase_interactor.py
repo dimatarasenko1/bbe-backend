@@ -57,6 +57,16 @@ def reassign_quizz(quizz: QuizDetails) -> str:
         raise HTTPException(status_code=500, detail="Failed to save quiz")
 
 
+def load_quizzes() -> list[QuizDetails]:
+    quizzes = db.collection("quiz_details").where("populated", "==", True).get()
+    quiz_list = []
+    for quiz in quizzes:
+        quiz_d = quiz.to_dict()
+        quiz_d["id"] = quiz.id
+        quiz_list.append(QuizDetails(**quiz_d))
+    return quiz_list
+
+
 # def wipe_quizzes():
 #     mock_id = "9MQGNsBUABtDqsBaUGIs"
 

@@ -7,6 +7,7 @@ from fastapi import (
     Response,
     Header,
     HTTPException,
+    Query,
 )
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -20,7 +21,8 @@ from models.quiz import (
 )
 from utils import gpt_interactor, firebase_interactor
 import generate
-from typing import Dict, List
+import services
+from typing import Dict, List, Optional
 
 app = FastAPI()
 connected_pairs: Dict[str, List[WebSocket]] = {}
@@ -44,6 +46,16 @@ app.add_middleware(
 @app.get("/")
 async def home(request: Request):
     return {"hello": "world"}
+
+
+@app.get("/quizzes")
+async def quizzes(
+    request: Request,
+    query: Optional[str] = Query(None),
+    category: Optional[str] = Query(None),
+    page: Optional[int] = Query(1),
+):
+    return services.get_quizzes(page, query, category)
 
 
 @app.post("/generate-draft", response_model=DraftResponse)

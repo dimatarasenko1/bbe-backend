@@ -5,7 +5,8 @@ import base64
 import logging
 from dataclasses import dataclass
 import firebase_admin
-from firebase_admin import credentials, firestore, auth
+from firebase_admin import credentials, firestore
+from supabase import create_client, Client
 
 load_dotenv()
 
@@ -18,9 +19,13 @@ logging.basicConfig(
 @dataclass(frozen=True)
 class Settings:
     OPENAI_KEY: str = os.getenv("OPENAI_KEY")
+    SUPABASE_URL: str = os.getenv("SUPABASE_URL")
+    SUPABASE_KEY: str = os.getenv("SUPABASE_PRIVATE_KEY")
 
 
 settings = Settings()
+
+supabase: Client = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
 
 # firebase
 google_service_account_json_base64 = os.getenv("GOOGLE_SERVICE_ACCOUNT_ENCODED_JSON")
