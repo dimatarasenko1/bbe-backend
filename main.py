@@ -18,8 +18,9 @@ from models.quiz import (
     DraftOption,
     QuizDetails,
     MockQuizDetails,
+    SupaQuiz,
 )
-from utils import gpt_interactor, firebase_interactor
+from utils import gpt_interactor, firebase_interactor, supa_interactor
 import generate
 import services
 from typing import Dict, List, Optional
@@ -63,34 +64,32 @@ async def quizzes(
 async def generate_draft(
     request: Request, payload: DraftInput, token: str = Header(...)
 ):
-    user = validate_user_login(token)
-    validate_can_generate(user)
-    print(user)
+    print(payload.user_id)
+    # user = validate_user_login(token)
+    # validate_can_generate(user)
+    # print(user)
 
     ok = gpt_interactor.moderation_check(payload.user_input)
     print(ok)
     if not ok:
         raise HTTPException(status_code=401, detail="Abusive content detected.")
 
-    options = generate.generate_draft(payload.user_input)
+    options = generate.generate_draft(payload)
     return DraftResponse(options=options)
 
 
-@app.post("/generate-final", response_model=QuizDetails)
+@app.post("/generate-final", response_model=SupaQuiz)
 async def generate_final(
     request: Request, payload: DraftOption, token: str = Header(...)
 ):
-    user = validate_user_login(token)
-    validate_can_generate(user)
+    # user = validate_user_login(token)
+    # validate_can_generate(user)
 
-    username = firebase_interactor.get_username(user["uid"])
-
-    quizz = generate.generate_final(payload, username)
+    quizz = generate.generate_final(payload)
     cat = generate.assign_category(quizz.title)
     quizz.category = cat.slug
     quizz.emoji = cat.emojiUnicode
-    quizz_id = firebase_interactor.save_quizz(quizz)
-    quizz.id = quizz_id
+    supa_interactor.save_quiz(quizz)
 
     return quizz
 

@@ -1,5 +1,5 @@
 from utils import gpt_interactor
-from models.quiz import DraftOption
+from models.quiz import DraftOption, DraftInput
 
 
 def system_message():
@@ -56,9 +56,9 @@ def two_shot_draft_prompt(user_input: str):
     return p
 
 
-def generate_draft(user_input: str):
+def generate_draft(payload: DraftInput):
     prompt = (
-        two_shot_draft_prompt(user_input)
+        two_shot_draft_prompt(payload.user_input)
         .strip()
         .replace("\n\n", "\n")
         .replace("  ", " ")
@@ -68,6 +68,7 @@ def generate_draft(user_input: str):
         DraftOption(
             title=option["title"],
             example_question=option["example_question"],
+            user_id=payload.user_id,
         )
         for option in response["quizzes"]
     ]

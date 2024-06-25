@@ -39,7 +39,16 @@ def get_quizzes(
     # Execute the count query
     count_response = count_query.execute()
     if not count_response.count:
-        raise Exception(f"Failed to fetch quiz count: {count_response}")
+        if count_response.count == 0:
+            return {
+                "page": page,
+                "per_page": per_page,
+                "total_pages": 0,
+                "total_count": 0,
+                "data": [],
+            }
+        else:
+            raise Exception(f"Failed to fetch quiz count: {count_response}")
 
     total_count = count_response.count
     total_pages = (total_count + per_page - 1) // per_page

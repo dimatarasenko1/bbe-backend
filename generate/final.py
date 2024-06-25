@@ -1,4 +1,4 @@
-from models.quiz import DraftOption, QuizDetails, Question
+from models.quiz import DraftOption, SupaQuiz, Question
 from utils import gpt_interactor
 from datetime import datetime
 
@@ -68,7 +68,7 @@ def two_shot_final_prompt(draft: DraftOption) -> str:
     return p
 
 
-def generate_final(draft: DraftOption, username: str) -> QuizDetails:
+def generate_final(draft: DraftOption) -> SupaQuiz:
     prompt = (
         two_shot_final_prompt(draft).strip().replace("\n\n", "\n").replace("  ", " ")
     )
@@ -90,11 +90,15 @@ def generate_final(draft: DraftOption, username: str) -> QuizDetails:
     rest = questions[1::2]
     final_questions = first_ten + rest
 
-    quiz = QuizDetails(
+    ts = datetime.now()
+
+    quiz = SupaQuiz(
         title=draft.title,
         intro=draft.example_question,
         questions=final_questions,
-        username=username,
-        created_at=int(datetime.now().timestamp()),
+        user_id=draft.user_id,
+        username="User",
+        created_at=ts,
+        updated_at=ts,
     )
     return quiz
