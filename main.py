@@ -11,7 +11,6 @@ from fastapi import (
 )
 from fastapi.requests import Request
 from fastapi.middleware.cors import CORSMiddleware
-from utils.firebase_interactor import validate_user_login, validate_can_generate
 from models.quiz import (
     DraftInput,
     DraftResponse,
@@ -101,22 +100,13 @@ async def populate_quizz(request: Request, payload: MockQuizDetails):
     return quizz
 
 
-@app.post("/change-username")
-async def change_username(
-    request: Request, new_username: str, token: str = Header(...)
-):
-    user = validate_user_login(token)
-    validate_can_generate(user)
+@app.delete("/delete-account")
+async def delete_account(request: Request, token: str = Header(...)):
+    user = supa_interactor.validate_user_login(token)
     print(user)
+    supa_interactor.delete_user(user.id)
 
-    ## TODO
-    # check if username is free
-    # delete document with old username
-    # make doc with new username
-    # change username ref in all quizz docs
-    # change username ref in all game docs
-
-    return {"todo": "world"}
+    return {"status": "ok"}
 
 
 @app.websocket("/ws/{game_id}/{user_id}")
