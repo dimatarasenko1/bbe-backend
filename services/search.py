@@ -57,7 +57,7 @@ def get_quizzes(
     data_query = (
         supabase.table("Quizzes")
         .select("*", "Users(username)")
-        .order("created_at", desc=True)
+        .order("play_count", desc=True)
         .range(offset, offset + per_page - 1)
     )
 
