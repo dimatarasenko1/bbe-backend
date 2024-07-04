@@ -117,6 +117,11 @@ async def websocket_endpoint(game_id: str, user_id: str, websocket: WebSocket):
     if game_id not in connected_pairs:
         connected_pairs[game_id] = []
 
+    # Notify existing user about the new connection
+    if connected_pairs[game_id]:
+        for ws in connected_pairs[game_id]:
+            await ws.send_json({"system_message": "partner_connected"})
+
     # Add the WebSocket connection to the pair
     connected_pairs[game_id].append(websocket)
 
@@ -130,6 +135,11 @@ async def websocket_endpoint(game_id: str, user_id: str, websocket: WebSocket):
     except WebSocketDisconnect:
         # If a user disconnects, remove them from the pair
         connected_pairs[game_id].remove(websocket)
+        # Notify the other user about the disconnection
+        if connected_pairs[game_id]:
+            for ws in connected_pairs[game_id]:
+                await ws.send_json({"system_message": "partner_disconnected"})
+        # Clean up if no users are left in the pair
         if not connected_pairs[game_id]:
             del connected_pairs[game_id]
     except Exception as e:
