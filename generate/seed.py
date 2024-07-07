@@ -1,17 +1,16 @@
 import json
-from utils import gpt_interactor
-import random
-import re
+from utils import gpt_interactor, supa_interactor
+import generate
 
 try:
     from .categorizer import is_valid_emoji
 except:
     from categorizer import is_valid_emoji
 
+from models.quiz import DraftOption, SupaQuiz, Question
+import random
+import generate.final as generate_final
 from datetime import datetime
-from models.quiz import MockQuizDetails, Question, QuizDetails
-from utils import firebase_interactor
-
 
 # generate a bunch of usernames
 # generate a bunch of quizz ideas across different categories
@@ -208,141 +207,82 @@ from utils import firebase_interactor
 ## END QUIZZ TITLES AND EMOJIS ##
 
 # SAVE MOCK QUIZZES TO FIRESTORE ##
-# firebase_interactor.wipe_quizzes()
-# usernames = []
-# with open("data/usernames.json", "r") as f:
-#     usernames = json.load(f)
-
-# quizzes = {}
-# with open("data/mock_quizzes.json", "r") as f:
-#     quizzes = json.load(f)
-
-# for key in quizzes.keys():
-#     for quiz in quizzes[key]:
-#         quiz["saved"] = False
-
-# with open(f"data/mock_quizzes.json", "w") as f:
-#     json.dump(quizzes, f, indent=4)
 
 
-# for key in quizzes.keys():
-#     for quiz in quizzes[key]:
-#         if quiz["saved"]:
-#             continue
-#         mock_quiz = MockQuizDetails(
-#             title=quiz["title"],
-#             emoji=quiz["emoji"],
-#             category=key,
-#             play_count=random.randint(0, 100),
-#             username=random.choice(usernames),
-#             created_at=int(datetime.now().timestamp()),
-#             seed=True,
-#         )
-#         # save to firestore
-#         firebase_interactor.save_quizz(mock_quiz)
-#         quiz["saved"] = True
-#         with open(f"data/mock_quizzes.json", "w") as f:
-#             json.dump(quizzes, f, indent=4)
-
-## END SAVE MOCK QUIZZES TO FIRESTORE ##
-
-
-## POPULATE QUIZZES AT RUNTIME ##
-def system_message():
-    m = """You are a smart and fun quizz gamemaster. 
-    With your help I am creating personalised quiz games for users to enjoy.
-    The goal is to create an engaging quizz game so people can test their knowledge, learn something new and have fun.
-    The idea of our quizz is that the user can decide the topic themselves and we then create a unique quizz just for them."""
-
-    return m
-
-
-def one_shot_populate_prompt(mock_quizz: MockQuizDetails) -> str:
-    p = f"""
-    The user has chosen a quiz idea that we now need to fill out with questions and answers. 
-    Here is the user's chosen quiz idea:
-    Quiz Title: {mock_quizz.title}
-
-    --- Instructions ---
-    1. Generate 20 multiple choice questions for the quiz.
-    2. Each question should have 4 answer choices with one correct answer.
-    3. The questions should only relate to the topic of the quiz.
-    4. The quizz is for expert-level players, so the questions should be very challenging.
-    5. The questions should get harder as the quiz progresses. Only a real know-it-all on the topic should be able to answer all the questions.
-
-
-    -- Guidelines --
-    1. IMPORTANT: Do not cover questions where you are not certain about the answer.
-    2. The correct answer should be clear and not misleading.
-    3. Be creative with the questions, don't just use the same structure for each question and cover various aspects of the quiz topic.
-    4. The tone of voice for each question should be casual, fun and engaging. 
-    5. Do NOT use position identifiers in answer options texts - e.g. 1) or A) etc. Each answer option should just be standalone text.
-    6. It is all about creating a fun and engaging quiz that the user will enjoy playing.
-
-    --- Question Tone of Voice And Format Examples ---
-    Quiz Title: "Space Exploration: The Final Frontier"
-
-    Question: "Who was the first human to travel into space?"
-    Answer Choices: A) Yuri Gagarin, B) Alan Shepard, C) John Glenn, D) Neil Armstrong
-
-    Question: "Which year did the first dog orbit the Earth?"
-    Answer Choices: A) 1957, B) 1959, C) 1961, D) 1963
-
-    Question: "What is the line separating Earth's atmosphere from outer space called?"
-    Answer Choices: A) Karman Line, B) Armstrong Line, C) Exobase, D) Tropopause
-    
-    --- Response Format ---
-    Return a JSON object of the final quizz like:
-    {{
-      "questions": [
-        {{
-            "question": "question 1",
-            "answers": ["answer1", "answer2", "answer3", "answer4"],
-            "correct": between 1-4
-        }},
-        {{
-            "question": "question 2",
-            "answers": ["answer1", "answer2", "answer3", "answer4"],
-            "correct": between 1-4
-        }}
-        ...
-      ]
-    }}
-"""
-
-    return p
-
-
-def populate_quizz(mock_quizz: MockQuizDetails):
+def generate_seed(option: DraftOption, category: str) -> SupaQuiz:
     prompt = (
-        one_shot_populate_prompt(mock_quizz)
+        generate_final.final_prompt(option, category)
         .strip()
         .replace("\n\n", "\n")
         .replace("  ", " ")
     )
-    response, _cost = gpt_interactor.json_gpt(prompt, system_message())
+    response, _cost = gpt_interactor.json_gpt(
+        prompt, generate_final.system_message(), temp=0.7
+    )
     qs = response["questions"]
 
-    example_question = qs[-1]["question"]
-
-    questions = [
-        Question(
-            question=q["question"],
-            answers=q["answers"],
-            correctIndex=int(q["correct"]) - 1,
+    questions = []
+    for q in qs:
+        stripped_answers = [
+            generate_final.check_for_position_identifier(answer)
+            for answer in q["answers"]
+        ]
+        filtered_answers, correct_index = generate_final.ensure_four_answers(
+            stripped_answers, int(q["correct"]) - 1
         )
-        for q in qs[:-1]
-    ]
+        shuffled_answers, new_correct_index = generate_final.shuffle_answers(
+            filtered_answers, correct_index
+        )
+        questions.append(
+            Question(
+                question=q["question"],
+                answers=shuffled_answers,
+                correctIndex=new_correct_index,
+            )
+        )
 
-    questions = questions[:20]
-    first_ten = questions[::2]
-    rest = questions[1::2]
-    final_questions = first_ten + rest
+    q1 = questions[0]
+    rest = questions[1:]
 
-    full_quiz = QuizDetails(
-        intro=example_question,
-        questions=final_questions,
-        **mock_quizz.model_dump(),
+    ts = datetime.now()
+
+    quiz = SupaQuiz(
+        title=option.title,
+        intro=q1.question,
+        category=category,
+        questions=rest,
+        user_id=option.user_id,
+        play_count=random.randint(0, 100),
+        seed=True,
+        username="User",
+        created_at=ts,
+        updated_at=ts,
     )
-    full_quiz.populated = True
-    return full_quiz
+    return quiz
+
+
+quizzes = {}
+with open("data/mock_quizzes.json", "r") as f:
+    quizzes = json.load(f)
+
+# restart --
+# for key in quizzes.keys():
+#     for quiz in quizzes[key]:
+#         quiz["saved"] = False
+
+# with open("data/mock_quizzes.json", "w") as f:
+#     json.dump(quizzes, f, indent=4)
+
+for category in quizzes.keys():
+    for quiz in quizzes[category]:
+        if quiz["saved"]:
+            continue
+        option = DraftOption(title=quiz["title"], user_id=None, example_question=None)
+        quizz = generate_seed(option, category)
+        quizz.emoji = quiz["emoji"] if quiz["emoji"] else None
+        supa_interactor.save_quiz(quizz)
+        quiz["saved"] = True
+        with open(f"data/mock_quizzes.json", "w") as f:
+            json.dump(quizzes, f, indent=4)
+
+## END SAVE MOCK QUIZZES TO FIRESTORE ##

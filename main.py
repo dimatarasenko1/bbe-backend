@@ -15,11 +15,9 @@ from models.quiz import (
     DraftInput,
     DraftResponse,
     DraftOption,
-    QuizDetails,
-    MockQuizDetails,
     SupaQuiz,
 )
-from utils import gpt_interactor, firebase_interactor, supa_interactor
+from utils import gpt_interactor, supa_interactor
 import generate
 import services
 from typing import Dict, List, Optional
@@ -63,11 +61,6 @@ async def quizzes(
 async def generate_draft(
     request: Request, payload: DraftInput, token: str = Header(...)
 ):
-    print(payload.user_id)
-    # user = validate_user_login(token)
-    # validate_can_generate(user)
-    # print(user)
-
     ok = gpt_interactor.moderation_check(payload.user_input)
     print(ok)
     if not ok:
@@ -81,22 +74,12 @@ async def generate_draft(
 async def generate_final(
     request: Request, payload: DraftOption, token: str = Header(...)
 ):
-    # user = validate_user_login(token)
-    # validate_can_generate(user)
-
     quizz = generate.generate_final(payload)
     cat = generate.assign_category(quizz.title)
     quizz.category = cat.slug
     quizz.emoji = cat.emojiUnicode
     supa_interactor.save_quiz(quizz)
 
-    return quizz
-
-
-@app.post("/populate-quizz", response_model=QuizDetails)
-async def populate_quizz(request: Request, payload: MockQuizDetails):
-    quizz = generate.populate_quizz(payload)
-    firebase_interactor.reassign_quizz(quizz)
     return quizz
 
 

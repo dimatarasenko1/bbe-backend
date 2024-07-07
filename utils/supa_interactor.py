@@ -6,7 +6,8 @@ from typing import Dict, Any
 def save_quiz(quiz: SupaQuiz) -> None:
     quiz_json = quiz.model_dump()
     quiz_json["id"] = str(quiz_json["id"])
-    quiz_json["user_id"] = str(quiz_json["user_id"])
+    if quiz.user_id is not None:
+        quiz_json["user_id"] = str(quiz_json["user_id"])
     del quiz_json["username"]
     del quiz_json["populated"]
     del quiz_json["created_at"]

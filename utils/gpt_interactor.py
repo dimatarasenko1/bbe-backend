@@ -47,10 +47,10 @@ def json_gpt(
         temperature=temp,
     )
 
+    logging.info(f"[GPT Response] Response: {completion}")
+
     response_text = completion.choices[0].message.content
     parsed = json.loads(response_text)
-
-    logging.info(f"[GPT Response] Response: {parsed}")
 
     # Cost
     input_cost = estimate_cost(prompt, True)

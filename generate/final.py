@@ -2,7 +2,7 @@ from models.quiz import DraftOption, SupaQuiz, Question
 from utils import gpt_interactor
 from datetime import datetime
 import random
-from typing import List
+from typing import List, Optional
 import re
 
 
@@ -15,12 +15,14 @@ def system_message():
     return m
 
 
-def two_shot_final_prompt(draft: DraftOption) -> str:
+def final_prompt(draft: DraftOption, category: Optional[str] = None) -> str:
+    cat_text = f"Category: {category}" if category else ""
     p = f"""
     The user has chosen a quiz idea that we now need to fill out with questions and answers. 
     Here is the user's chosen quiz idea:
     Title: {draft.title}
     Example Question: {draft.example_question}
+    {cat_text}
 
     --- Instructions ---
     1. Generate 15 multiple choice questions for the quiz.
@@ -85,7 +87,6 @@ def ensure_four_answers(answers, correct_index):
 
 
 def shuffle_answers(answers: List[str], correct_index: int):
-    print(correct_index, answers)
     shuffled_answers = answers[:]
     random.shuffle(shuffled_answers)
     new_correct_index = shuffled_answers.index(answers[correct_index])
@@ -110,7 +111,10 @@ def filter_out_example_question(
 
 def generate_final(draft: DraftOption) -> SupaQuiz:
     prompt = (
-        two_shot_final_prompt(draft).strip().replace("\n\n", "\n").replace("  ", " ")
+        final_prompt(draft, category=None)
+        .strip()
+        .replace("\n\n", "\n")
+        .replace("  ", " ")
     )
     response, _cost = gpt_interactor.json_gpt(prompt, system_message(), temp=0.7)
     qs = response["questions"]

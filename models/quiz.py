@@ -48,7 +48,7 @@ class SupaQuiz(CamelCaseModel):
     title: str
     intro: str
     username: str
-    user_id: UUID
+    user_id: Optional[UUID] = None
     play_count: int = 1
     category: Optional[str] = None
     emoji: Optional[str] = None
@@ -66,8 +66,8 @@ class DraftInput(CamelCaseModel):
 
 class DraftOption(CamelCaseModel):
     title: str
-    example_question: str
-    user_id: str
+    example_question: Optional[str] = None
+    user_id: Optional[str] = None
 
 
 class DraftResponse(CamelCaseModel):

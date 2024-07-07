@@ -1,11 +1,6 @@
 {
     "sports": [
         {
-            "title": "Olympic Legends Quiz",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
             "title": "NFL History Blitz",
             "emoji": "\ud83c\udfc8",
             "saved": true
@@ -41,38 +36,8 @@
             "saved": true
         },
         {
-            "title": "Mascot Mania",
-            "emoji": "\ud83c\udfad",
-            "saved": true
-        },
-        {
-            "title": "Athlete Alias Challenge",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Epic Olympic Moments",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Winter Olympics Trivia",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Epic Sports Showdowns",
-            "emoji": "\u2694\ufe0f",
-            "saved": true
-        },
-        {
             "title": "NBA's Top Scorers Quiz",
             "emoji": "\ud83c\udfc0",
-            "saved": true
-        },
-        {
-            "title": "Epic Sports Upsets",
-            "emoji": "\ud83c\udfc6",
             "saved": true
         },
         {
@@ -81,18 +46,8 @@
             "saved": true
         },
         {
-            "title": "Record-Breaking Athletes",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
             "title": "Legends of Baseball",
             "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Stadium Showdown",
-            "emoji": "\ud83c\udfdf\ufe0f",
             "saved": true
         },
         {
@@ -106,23 +61,8 @@
             "saved": true
         },
         {
-            "title": "Marathon Mastermind",
-            "emoji": "\ud83c\udfc3\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Olympic Medal Masters",
-            "emoji": "\ud83e\udd47",
-            "saved": true
-        },
-        {
             "title": "Epic Football Rivalries",
             "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Tokyo 2020: Olympic Highlights",
-            "emoji": "\ud83c\udfc5",
             "saved": true
         },
         {
@@ -161,48 +101,8 @@
             "saved": true
         },
         {
-            "title": "Legendary Sports Coaches Quiz",
-            "emoji": "\ud83c\udfc6",
-            "saved": true
-        },
-        {
-            "title": "Legendary Athletes Quiz",
-            "emoji": "\ud83c\udfc6",
-            "saved": true
-        },
-        {
-            "title": "Legendary NBA Teams",
-            "emoji": "\ud83c\udfc0",
-            "saved": true
-        },
-        {
-            "title": "Epic Athletics Moments",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Sports Shockwaves",
-            "emoji": "\ud83d\udca5",
-            "saved": true
-        },
-        {
-            "title": "Epic World Cup Matches",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Epic Olympic Records",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
             "title": "UFC's Greatest Hits",
             "emoji": "\ud83e\udd4b",
-            "saved": true
-        },
-        {
-            "title": "Champions of the Pitch",
-            "emoji": "\u26bd",
             "saved": true
         },
         {
@@ -221,21 +121,6 @@
             "saved": true
         },
         {
-            "title": "Scandalous Sports Moments",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Cycling Legends Quiz",
-            "emoji": "\ud83d\udeb4\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Voice of the Game",
-            "emoji": "\ud83c\udf99\ufe0f",
-            "saved": true
-        },
-        {
             "title": "Top NBA Draft Picks Quiz",
             "emoji": "\ud83c\udfc0",
             "saved": true
@@ -246,58 +131,13 @@
             "saved": true
         },
         {
-            "title": "Legendary Sports Dynasties",
-            "emoji": "\ud83c\udfc6",
-            "saved": true
-        },
-        {
             "title": "Iconic Moments in French Open History",
             "emoji": "\ud83c\udfbe",
             "saved": true
         },
         {
-            "title": "Soccer Legends: Best by Position",
-            "emoji": "\u26bd",
-            "saved": true
-        },
-        {
-            "title": "Epic Olympic Openings",
-            "emoji": "\ud83c\udf89",
-            "saved": true
-        },
-        {
-            "title": "21st Century Sports Legends",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Winter Olympics Highlights",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
-            "title": "Trophy Triumphs",
-            "emoji": "\ud83c\udfc6",
-            "saved": true
-        },
-        {
-            "title": "Caddie Legends of Golf",
-            "emoji": "\ud83c\udfcc\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Gallop to Glory: Famous Horse Races",
-            "emoji": "\ud83c\udfc7",
-            "saved": true
-        },
-        {
             "title": "NBA All-Star Moments Magic",
             "emoji": "\ud83c\udfc0",
-            "saved": true
-        },
-        {
-            "title": "Legends of the Game",
-            "emoji": "\ud83c\udfc6",
             "saved": true
         }
     ],
@@ -305,11 +145,6 @@
         {
             "title": "Rock Legends: A History Quiz",
             "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
-            "title": "Maestros of Melody",
-            "emoji": "\ud83c\udfbc",
             "saved": true
         },
         {
@@ -328,21 +163,6 @@
             "saved": true
         },
         {
-            "title": "80s One-Hit Wonders",
-            "emoji": "\ud83c\udfa4",
-            "saved": true
-        },
-        {
-            "title": "Groove Fest Trivia",
-            "emoji": "\ud83c\udfa4",
-            "saved": true
-        },
-        {
-            "title": "Top-Selling Tunes Trivia",
-            "emoji": "\ud83c\udfb5",
-            "saved": true
-        },
-        {
             "title": "Hip Hop Evolution Quiz",
             "emoji": "\ud83c\udfa4",
             "saved": true
@@ -358,21 +178,6 @@
             "saved": true
         },
         {
-            "title": "Soundtrack Showdown",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "Orchestra Instruments Challenge",
-            "emoji": "\ud83c\udfbb",
-            "saved": true
-        },
-        {
-            "title": "Grammy Album Masters",
-            "emoji": "\ud83c\udfb6",
-            "saved": true
-        },
-        {
             "title": "Country Music Legends Quiz",
             "emoji": "\ud83c\udfb8",
             "saved": true
@@ -384,11 +189,6 @@
         },
         {
             "title": "Epic Guitar Solos",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Global Grooves",
             "emoji": null,
             "saved": true
         },
@@ -473,11 +273,6 @@
             "saved": true
         },
         {
-            "title": "Epic Instrumental Themes",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
             "title": "Jazz Standards Showdown",
             "emoji": "\ud83c\udfb7",
             "saved": true
@@ -508,21 +303,6 @@
             "saved": true
         },
         {
-            "title": "Groovy Tunes: Music Genres Through Decades",
-            "emoji": "\ud83c\udfb6",
-            "saved": true
-        },
-        {
-            "title": "70s Singer-Songwriter Showdown",
-            "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
-            "title": "Bass Line Legends",
-            "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
             "title": "Iconic Music Venues",
             "emoji": null,
             "saved": true
@@ -538,43 +318,8 @@
             "saved": true
         },
         {
-            "title": "Groovy Tunes of Woodstock '69",
-            "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
             "title": "Psychedelic 60s Rock Extravaganza",
             "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
-            "title": "Modern Maestros",
-            "emoji": "\ud83c\udfbc",
-            "saved": true
-        },
-        {
-            "title": "Country Ballad Trivia",
-            "emoji": "\ud83c\udfa4",
-            "saved": true
-        },
-        {
-            "title": "Rocking the 80s: Glam Metal Trivia",
-            "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
-            "title": "Banned Beats: Music History Trivia",
-            "emoji": "\ud83c\udfb6",
-            "saved": true
-        },
-        {
-            "title": "Roots of Folk Music",
-            "emoji": "\ud83c\udfb6",
-            "saved": true
-        },
-        {
-            "title": "Anthems of Change",
-            "emoji": "\ud83c\udfb5",
             "saved": true
         },
         {
@@ -595,16 +340,6 @@
         {
             "title": "Metal Subgenre Mania",
             "emoji": "\ud83c\udfb8",
-            "saved": true
-        },
-        {
-            "title": "Tearjerker Tunes Trivia",
-            "emoji": "\ud83d\ude22",
-            "saved": true
-        },
-        {
-            "title": "Colorful Bands",
-            "emoji": null,
             "saved": true
         },
         {
@@ -675,17 +410,12 @@
             "saved": true
         },
         {
-            "title": "Wizarding World Trivia",
-            "emoji": "\ud83e\uddd9\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
             "title": "Nolan's Cinematic Genius",
             "emoji": "\ud83c\udfac",
             "saved": true
         },
         {
-            "title": "The Ultimate Star Wars Saga Quiz",
+            "title": "The Star Wars Quiz",
             "emoji": "\ud83c\udf0c",
             "saved": true
         },
@@ -695,7 +425,7 @@
             "saved": true
         },
         {
-            "title": "Rom-Com Trivia Extravaganza",
+            "title": "Rom-Com Trivia",
             "emoji": "\ud83c\udfac",
             "saved": true
         },
@@ -722,16 +452,6 @@
         {
             "title": "Musical Movie Magic",
             "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "Epic Car Chases in Movies",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Holiday Film Frenzy",
-            "emoji": "\ud83c\udfa5",
             "saved": true
         },
         {
@@ -775,11 +495,6 @@
             "saved": true
         },
         {
-            "title": "Survive the Apocalypse!",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Sci-Fi Movie Mastermind",
             "emoji": "\ud83c\udfac",
             "saved": true
@@ -805,11 +520,6 @@
             "saved": true
         },
         {
-            "title": "Beyond Disney: Animated Adventures",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
             "title": "Saddle Up: Classic Westerns",
             "emoji": "\ud83e\udd20",
             "saved": true
@@ -822,11 +532,6 @@
         {
             "title": "NYC Movie Magic",
             "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "From Big Screen to Small Screen",
-            "emoji": null,
             "saved": true
         },
         {
@@ -875,17 +580,7 @@
             "saved": true
         },
         {
-            "title": "Laughs in the Dark: A Dark Comedy Quiz",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Books to Blockbusters",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "SNL Movie Magic",
             "emoji": "\ud83c\udfac",
             "saved": true
         },
@@ -905,7 +600,7 @@
             "saved": true
         },
         {
-            "title": "Soundtrack Showdown",
+            "title": "Movie Soundtrack Showdown",
             "emoji": "\ud83c\udfac",
             "saved": true
         },
@@ -926,11 +621,6 @@
         },
         {
             "title": "Epic Battle Scenes in Films",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "Global Cinema Challenge",
             "emoji": "\ud83c\udfac",
             "saved": true
         },
@@ -992,11 +682,6 @@
             "saved": true
         },
         {
-            "title": "Mysteries of Egyptian Medicine",
-            "emoji": "\ud83e\udd89",
-            "saved": true
-        },
-        {
             "title": "Trailblazing Women Inventors",
             "emoji": "\ud83d\udd2c",
             "saved": true
@@ -1012,11 +697,6 @@
             "saved": true
         },
         {
-            "title": "Brainy Bytes: Unlocking Mind Mysteries",
-            "emoji": "\ud83e\udde0",
-            "saved": true
-        },
-        {
             "title": "Elemental Adventure",
             "emoji": "\ud83e\uddea",
             "saved": true
@@ -1029,11 +709,6 @@
         {
             "title": "Tropical Rainforest Treasures",
             "emoji": "\ud83c\udf34",
-            "saved": true
-        },
-        {
-            "title": "Climate Change Impact Quiz",
-            "emoji": "\ud83c\udf0d",
             "saved": true
         },
         {
@@ -1067,21 +742,6 @@
             "saved": true
         },
         {
-            "title": "Eruptive Knowledge",
-            "emoji": "\ud83c\udf0b",
-            "saved": true
-        },
-        {
-            "title": "Wild Adaptations",
-            "emoji": "\ud83e\udd8e",
-            "saved": true
-        },
-        {
-            "title": "Microbe Madness",
-            "emoji": "\ud83d\udd2c",
-            "saved": true
-        },
-        {
             "title": "AI: Tomorrow's Tech Today",
             "emoji": "\ud83e\udd16",
             "saved": true
@@ -1092,11 +752,6 @@
             "saved": true
         },
         {
-            "title": "Mammal Repro 101",
-            "emoji": "\ud83d\udc3e",
-            "saved": true
-        },
-        {
             "title": "Genetic Engineering Breakthroughs",
             "emoji": "\ud83e\uddec",
             "saved": true
@@ -1104,11 +759,6 @@
         {
             "title": "Galactic Quest: Search for Alien Life",
             "emoji": "\ud83d\udef8",
-            "saved": true
-        },
-        {
-            "title": "Carnivorous Curiosities",
-            "emoji": "\ud83e\udeb4",
             "saved": true
         },
         {
@@ -1123,21 +773,6 @@
         },
         {
             "title": "Dive into Deep Ocean Currents",
-            "emoji": "\ud83c\udf0a",
-            "saved": true
-        },
-        {
-            "title": "Bones & Beyond",
-            "emoji": "\ud83e\uddb4",
-            "saved": true
-        },
-        {
-            "title": "Clone Craze: The Science of Cloning",
-            "emoji": "\ud83e\uddec",
-            "saved": true
-        },
-        {
-            "title": "Titanic Disasters & Natural Catastrophes",
             "emoji": "\ud83c\udf0a",
             "saved": true
         },
@@ -1167,28 +802,8 @@
             "saved": true
         },
         {
-            "title": "Mysteries of Metamorphic Rocks",
-            "emoji": "\ud83e\udea8",
-            "saved": true
-        },
-        {
             "title": "Thermodynamics Trivia",
             "emoji": "\ud83d\udd25",
-            "saved": true
-        },
-        {
-            "title": "Mars Rover Discoveries",
-            "emoji": "\ud83d\udef8",
-            "saved": true
-        },
-        {
-            "title": "Cancer Treatment Trivia",
-            "emoji": "\ud83e\uddec",
-            "saved": true
-        },
-        {
-            "title": "Food Chain Frenzy",
-            "emoji": "\ud83c\udf10",
             "saved": true
         },
         {
@@ -1197,33 +812,13 @@
             "saved": true
         },
         {
-            "title": "Mind & Body Healings",
-            "emoji": "\ud83e\uddd8\u200d\u2640\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Nano Wonders: Applications of Nanotechnology",
+            "title": "Nanotechnology Quiz",
             "emoji": "\ud83d\udd2c",
-            "saved": true
-        },
-        {
-            "title": "Pollution Effects Unveiled",
-            "emoji": "\ud83c\udf0d",
             "saved": true
         },
         {
             "title": "Stargazers of Antiquity",
             "emoji": "\ud83c\udf20",
-            "saved": true
-        },
-        {
-            "title": "Bonding Basics",
-            "emoji": "\ud83e\uddea",
-            "saved": true
-        },
-        {
-            "title": "Shining Uses of Solar Energy",
-            "emoji": "\u2600\ufe0f",
             "saved": true
         },
         {
@@ -1302,11 +897,6 @@
             "saved": true
         },
         {
-            "title": "Cosmic Cartography",
-            "emoji": "\ud83e\ude90",
-            "saved": true
-        },
-        {
             "title": "Electromagnetism Essentials",
             "emoji": "\u26a1",
             "saved": true
@@ -1334,7 +924,7 @@
             "saved": true
         },
         {
-            "title": "Blitz and Beyond: WWII Battles",
+            "title": "Epic WWII Battles",
             "emoji": "\u2694\ufe0f",
             "saved": true
         },
@@ -1379,11 +969,6 @@
             "saved": true
         },
         {
-            "title": "Olympian Gods Challenge",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Elizabethan Culture Quest",
             "emoji": "\ud83c\udff0",
             "saved": true
@@ -1414,23 +999,8 @@
             "saved": true
         },
         {
-            "title": "Olympic Origins Quiz",
-            "emoji": "\ud83c\udfc5",
-            "saved": true
-        },
-        {
             "title": "Dynasty Detective: Ancient China",
             "emoji": "\ud83c\udc04",
-            "saved": true
-        },
-        {
-            "title": "Art Movements Unveiled",
-            "emoji": "\ud83c\udfa8",
-            "saved": true
-        },
-        {
-            "title": "Prehistoric Discoveries",
-            "emoji": "\ud83e\udd95",
             "saved": true
         },
         {
@@ -1439,23 +1009,8 @@
             "saved": true
         },
         {
-            "title": "Striking Gold: Historic Gold Rushes",
-            "emoji": "\u26cf\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Epic Tales of Colonization",
-            "emoji": "\ud83c\udf0d",
-            "saved": true
-        },
-        {
             "title": "Plagues & Pandemics Through Time",
             "emoji": "\ud83e\udda0",
-            "saved": true
-        },
-        {
-            "title": "Iconic Papers of History",
-            "emoji": "\ud83d\udcdc",
             "saved": true
         },
         {
@@ -1469,38 +1024,13 @@
             "saved": true
         },
         {
-            "title": "Rebellions & Revolutions: A Time Traveler's Quiz",
+            "title": "Rebellions & Revolutions",
             "emoji": "\u23f3",
-            "saved": true
-        },
-        {
-            "title": "Epic Showdowns in History",
-            "emoji": "\u2694\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Historical Urban Legends Unveiled",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Global Trade Chronicles",
-            "emoji": null,
             "saved": true
         },
         {
             "title": "Wisdom of Ancient Greek Philosophers",
             "emoji": "\ud83e\uddd0",
-            "saved": true
-        },
-        {
-            "title": "Discovery Dash",
-            "emoji": "\ud83d\udd2c",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of Roman Mythology",
-            "emoji": "\ud83c\udfdb\ufe0f",
             "saved": true
         },
         {
@@ -1511,16 +1041,6 @@
         {
             "title": "Pirate Plunder",
             "emoji": "\ud83c\udff4\u200d\u2620\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Castle Quest: Medieval Marvels",
-            "emoji": "\ud83c\udff0",
-            "saved": true
-        },
-        {
-            "title": "Printing Press Chronicles",
-            "emoji": "\ud83d\udcdc",
             "saved": true
         },
         {
@@ -1559,33 +1079,13 @@
             "saved": true
         },
         {
-            "title": "Medical Mavericks",
-            "emoji": "\ud83e\ude7a",
-            "saved": true
-        },
-        {
-            "title": "Inventive Minds: History's Greatest Inventors",
+            "title": "History's Greatest Inventors",
             "emoji": "\ud83e\udde0",
             "saved": true
         },
         {
             "title": "Treaties that Shaped History",
             "emoji": "\ud83d\udcdc",
-            "saved": true
-        },
-        {
-            "title": "Road to Freedom",
-            "emoji": "\ud83d\udee4\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Freedom Fights! \ud83c\udf0d",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Unleash Your Inner Olympian",
-            "emoji": "\ud83c\udffa",
             "saved": true
         },
         {
@@ -1619,11 +1119,6 @@
             "saved": true
         },
         {
-            "title": "Courts of History",
-            "emoji": "\u2696\ufe0f",
-            "saved": true
-        },
-        {
             "title": "The Berlin Wall Chronicles",
             "emoji": "\ud83e\uddf1",
             "saved": true
@@ -1639,11 +1134,6 @@
             "saved": true
         },
         {
-            "title": "Global Economic Downturns \ud83c\udf0d\ud83d\udcc9",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Resilience & Triumph: Holocaust Survivors' Stories",
             "emoji": "\ud83d\udcda",
             "saved": true
@@ -1651,11 +1141,6 @@
         {
             "title": "Epic Conquests",
             "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Philosophical Journeys",
-            "emoji": "\ud83e\udde0",
             "saved": true
         }
     ],
@@ -1711,11 +1196,6 @@
             "saved": true
         },
         {
-            "title": "Page to Screen: The Ultimate Quiz",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Fantasy Realms Quiz",
             "emoji": "\ud83e\uddd9\u200d\u2642\ufe0f",
             "saved": true
@@ -1723,11 +1203,6 @@
         {
             "title": "Epic Poetry Showdown",
             "emoji": "\ud83d\udcdc",
-            "saved": true
-        },
-        {
-            "title": "Timeless Tales for Tots",
-            "emoji": "\ud83d\udcda",
             "saved": true
         },
         {
@@ -1746,27 +1221,7 @@
             "saved": true
         },
         {
-            "title": "Timeless Tales: Historical Fiction Quiz",
-            "emoji": "\ud83d\udcdc",
-            "saved": true
-        },
-        {
-            "title": "Cover Art Craze",
-            "emoji": "\ud83c\udfa8",
-            "saved": true
-        },
-        {
-            "title": "Inspiring Reads Quiz",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Magical Books Quest",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "King's Literary Maze",
+            "title": "Stephen King's Literary Maze",
             "emoji": "\ud83d\udcda",
             "saved": true
         },
@@ -1801,33 +1256,8 @@
             "saved": true
         },
         {
-            "title": "Survive the Apocalypse",
-            "emoji": "\ud83c\udf06",
-            "saved": true
-        },
-        {
-            "title": "Trilogy Treasures",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
-            "title": "Galactic Reads",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Genre Genius: Lit Edition",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
             "title": "Verse Master",
             "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Untrustworthy Tales",
-            "emoji": null,
             "saved": true
         },
         {
@@ -1841,11 +1271,6 @@
             "saved": true
         },
         {
-            "title": "Secret Agent Showdown",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
             "title": "Mythical Reads Trivia",
             "emoji": "\ud83d\udcda",
             "saved": true
@@ -1856,38 +1281,13 @@
             "saved": true
         },
         {
-            "title": "Epic Book Series Showdown",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Chrono Bookworm Challenge",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Villainous Pages",
+            "title": "Book Villains Quiz",
             "emoji": "\ud83d\udcda",
             "saved": true
         },
         {
             "title": "Epic Tales and Scrolls",
             "emoji": "\ud83d\udcdc",
-            "saved": true
-        },
-        {
-            "title": "Pirate Book Bonanza",
-            "emoji": "\ud83c\udff4\u200d\u2620\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Life on the Page: Autobiographies Quiz",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Tales from Many Voices",
-            "emoji": "\ud83d\udcda",
             "saved": true
         },
         {
@@ -1911,17 +1311,7 @@
             "saved": true
         },
         {
-            "title": "AI in Literature",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
             "title": "Literary Legends: Who's Who?",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Iconic Book Illustrations Quiz",
             "emoji": "\ud83d\udcda",
             "saved": true
         },
@@ -1946,32 +1336,7 @@
             "saved": true
         },
         {
-            "title": "Harmony in Pages",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Around the World in Pages",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Philosophical Page-Turners",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Friendship Tales",
-            "emoji": "\ud83d\udcda",
-            "saved": true
-        },
-        {
-            "title": "Global Reads Quiz",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Superhero Saga Quiz",
             "emoji": "\ud83d\udcda",
             "saved": true
         },
@@ -1986,11 +1351,6 @@
             "saved": true
         },
         {
-            "title": "Eureka Reads",
-            "emoji": null,
-            "saved": true
-        },
-        {
             "title": "Dramatic Speeches Quiz",
             "emoji": "\ud83c\udfad",
             "saved": true
@@ -1998,11 +1358,6 @@
         {
             "title": "Forbidden Love in Novels",
             "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Foresight in Fiction",
-            "emoji": "\ud83d\udd2e",
             "saved": true
         },
         {
@@ -2043,11 +1398,6 @@
             "saved": true
         },
         {
-            "title": "Masterminds of Cinema",
-            "emoji": "\ud83c\udfac",
-            "saved": true
-        },
-        {
             "title": "Abstract Expressionism Masters",
             "emoji": "\ud83c\udfa8",
             "saved": true
@@ -2059,11 +1409,6 @@
         },
         {
             "title": "Curtain Call: Historic Plays",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Literary Legends: Authors Quiz",
             "emoji": null,
             "saved": true
         },
@@ -2148,23 +1493,8 @@
             "saved": true
         },
         {
-            "title": "Global Graffiti",
-            "emoji": "\ud83c\udf0d",
-            "saved": true
-        },
-        {
             "title": "Mastering Ukiyo-e",
             "emoji": "\ud83c\udfa8",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of Medieval Manuscripts",
-            "emoji": "\ud83d\udcdc",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of Celtic Knots",
-            "emoji": "\ud83d\udd04",
             "saved": true
         },
         {
@@ -2193,11 +1523,6 @@
             "saved": true
         },
         {
-            "title": "Mythology Masterpieces",
-            "emoji": "\ud83c\udfa8",
-            "saved": true
-        },
-        {
             "title": "Illustrator Icons",
             "emoji": "\ud83c\udfa8",
             "saved": true
@@ -2214,11 +1539,6 @@
         },
         {
             "title": "Great Art Heists",
-            "emoji": "\ud83d\uddbc\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of African Tribal Art",
             "emoji": "\ud83d\uddbc\ufe0f",
             "saved": true
         },
@@ -2240,11 +1560,6 @@
         {
             "title": "Renaissance Sculpture Masterpieces",
             "emoji": "\ud83d\uddff",
-            "saved": true
-        },
-        {
-            "title": "Guess the Movie Poster",
-            "emoji": "\ud83c\udfac",
             "saved": true
         },
         {
@@ -2303,11 +1618,6 @@
             "saved": true
         },
         {
-            "title": "Art's Ripple Effect",
-            "emoji": "\ud83c\udfa8",
-            "saved": true
-        },
-        {
             "title": "Art Conservation Chronicles",
             "emoji": "\ud83d\udd8c\ufe0f",
             "saved": true
@@ -2360,27 +1670,7 @@
             "saved": true
         },
         {
-            "title": "Master Builder Challenge",
-            "emoji": "\ud83e\uddf1",
-            "saved": true
-        },
-        {
-            "title": "Crafting Mastery",
-            "emoji": "\ud83d\udee0\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Epic Game Tunes",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Open World Easter Eggs Hunt",
-            "emoji": "\ud83d\udc23",
-            "saved": true
-        },
-        {
-            "title": "Pok\u00e9mon Evolution Mastery",
+            "title": "Pokemon Mastery",
             "emoji": "\ud83e\uddec",
             "saved": true
         },
@@ -2395,27 +1685,12 @@
             "saved": true
         },
         {
-            "title": "Fortnite Seasons & Updates Blitz",
-            "emoji": "\ud83c\udfae",
-            "saved": true
-        },
-        {
-            "title": "Guess the Gamer Quote",
-            "emoji": "\ud83c\udfae",
-            "saved": true
-        },
-        {
             "title": "Villainous Video Game Baddies",
             "emoji": "\ud83d\udd25",
             "saved": true
         },
         {
             "title": "Twist and Turn: Narrative Games",
-            "emoji": "\ud83c\udfae",
-            "saved": true
-        },
-        {
-            "title": "Power-Up Parade",
             "emoji": "\ud83c\udfae",
             "saved": true
         },
@@ -2510,18 +1785,8 @@
             "saved": true
         },
         {
-            "title": "Cyberpunk 2077 Features Showdown",
+            "title": "Cyberpunk 2077 Showdown",
             "emoji": "\ud83e\udd16",
-            "saved": true
-        },
-        {
-            "title": "Twitch Game Masters",
-            "emoji": "\ud83c\udfae",
-            "saved": true
-        },
-        {
-            "title": "Secrets & Spies",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
             "saved": true
         },
         {
@@ -2535,12 +1800,7 @@
             "saved": true
         },
         {
-            "title": "Console Chronicles",
-            "emoji": "\ud83c\udfae",
-            "saved": true
-        },
-        {
-            "title": "FutureTech in Gaming",
+            "title": "Console Wars: A History",
             "emoji": "\ud83c\udfae",
             "saved": true
         },
@@ -2577,11 +1837,6 @@
             "saved": true
         },
         {
-            "title": "Mystery Unsolved",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
             "title": "Mysteries of Serial Killers",
             "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
             "saved": true
@@ -2597,11 +1852,6 @@
             "saved": true
         },
         {
-            "title": "Indigenous Traditions Quest",
-            "emoji": "\ud83c\udf00",
-            "saved": true
-        },
-        {
             "title": "Secrets of Lost Civilizations",
             "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
             "saved": true
@@ -2609,26 +1859,6 @@
         {
             "title": "Mysterious London: Urban Legends Quiz",
             "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of UFO Sightings",
-            "emoji": null,
-            "saved": true
-        },
-        {
-            "title": "Inked Through Time",
-            "emoji": "\ud83d\udd8b\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Haunted Hideaways",
-            "emoji": "\ud83c\udfda\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Wonders of the Weird",
-            "emoji": "\ud83c\udf2a\ufe0f",
             "saved": true
         },
         {
@@ -2662,11 +1892,6 @@
             "saved": true
         },
         {
-            "title": "Pirate Plunder Quiz",
-            "emoji": "\ud83c\udff4\u200d\u2620\ufe0f",
-            "saved": true
-        },
-        {
             "title": "Unveiling Secret Societies",
             "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
             "saved": true
@@ -2677,11 +1902,6 @@
             "saved": true
         },
         {
-            "title": "Rare Flora Quest",
-            "emoji": "\ud83c\udf3f",
-            "saved": true
-        },
-        {
             "title": "Bizarre Animal Antics",
             "emoji": "\ud83d\udc3e",
             "saved": true
@@ -2689,11 +1909,6 @@
         {
             "title": "Bizarre Phobia Facts",
             "emoji": "\ud83d\ude31",
-            "saved": true
-        },
-        {
-            "title": "Decipher the Past",
-            "emoji": "\ud83d\udcdc",
             "saved": true
         },
         {
@@ -2712,18 +1927,8 @@
             "saved": true
         },
         {
-            "title": "Superstition Safari",
+            "title": "Superstitions Quiz",
             "emoji": "\ud83e\uddd9\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Mysteries of the Underground Cities",
-            "emoji": "\ud83c\udf06",
-            "saved": true
-        },
-        {
-            "title": "Secrets Behind the Walls",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
             "saved": true
         },
         {
@@ -2754,11 +1959,6 @@
         {
             "title": "Medieval Job Quest",
             "emoji": "\ud83d\udee1\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Curse Chronicles: Ancient Mysteries",
-            "emoji": "\ud83e\uddff",
             "saved": true
         },
         {
@@ -2807,37 +2007,12 @@
             "saved": true
         },
         {
-            "title": "Odd Divorce Tales",
-            "emoji": "\ud83d\udd75\ufe0f\u200d\u2642\ufe0f",
-            "saved": true
-        },
-        {
-            "title": "Secret Underground Worlds",
-            "emoji": "\ud83c\udf10",
-            "saved": true
-        },
-        {
-            "title": "Landmark Legends",
-            "emoji": "\ud83d\uddff",
-            "saved": true
-        },
-        {
-            "title": "Bizarre Ailments Quiz",
-            "emoji": "\ud83e\uddec",
-            "saved": true
-        },
-        {
-            "title": "Great Escapes",
+            "title": "Greatest Prison Breaks",
             "emoji": "\ud83d\udddd\ufe0f",
             "saved": true
         },
         {
-            "title": "Coffee Secrets Unveiled",
-            "emoji": "\u2615",
-            "saved": true
-        },
-        {
-            "title": "Guinness Greats",
+            "title": "Bizarre Guinness World Records",
             "emoji": "\ud83c\udfc6",
             "saved": true
         }
