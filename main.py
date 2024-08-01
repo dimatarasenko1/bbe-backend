@@ -57,6 +57,11 @@ async def quizzes(
     return services.get_quizzes(page, query, category, seen)
 
 
+@app.get("/leaderboard")
+async def leaderboard(request: Request):
+    return services.get_leaderboard()
+
+
 @app.post("/generate-draft", response_model=DraftResponse)
 async def generate_draft(
     request: Request, payload: DraftInput, token: str = Header(...)
